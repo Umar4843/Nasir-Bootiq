@@ -1,0 +1,52 @@
+.bridal-container {
+    padding: 20px;
+    text-align: center;
+    margin-top: 120px;
+  }
+  
+  .bridal-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #a52a2a;
+  }
+  
+  .bridal-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .bridal-card {
+    background: #fff;
+    padding: 15px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .bridal-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .bridal-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .bridal-name {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #a52a2a;
+  }
+  
+  .bridal-price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #444;
+  }
+  

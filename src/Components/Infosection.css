@@ -1,0 +1,37 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.shipping-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-wrapper {
+    width: 50px;  /* Ensure it's a perfect circle */
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px dashed #E1573E;
+}
+
+.logo {
+    color: #E1573E;
+    font-size: 24px;  /* Adjust size to fit inside */
+}
+
+.text h4 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #222;
+}
+
+.text p {
+    font-size: 12px;
+    color: #666;
+}

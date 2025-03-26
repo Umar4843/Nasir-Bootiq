@@ -35,7 +35,7 @@ const Header = () => {
         { title: 'MEHNDI DRESS', path: '/mehndi' },
         { title: 'BRIDAL DRESS', path: '/bridal' },
         { title: 'Maxi & Frock', path: '/maxi&frock' },
-        { title: 'FABRICS', path: '/fabrics' },
+        { title: 'Saree Dress', path: '/sareedress' },
     ];
 
     return (

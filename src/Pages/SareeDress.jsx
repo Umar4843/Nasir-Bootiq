@@ -4,15 +4,15 @@ import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 
 const sareeItems = [
-  { id: 1, title: "Royal Blue Silk Saree", price: 220, image: "https://i.pinimg.com/736x/0a/3f/88/0a3f88e8be4bda5b8b2119fa648b5d4b.jpg" },
-  { id: 2, title: "Red Bridal Saree", price: 250, image: "https://i.pinimg.com/736x/52/1b/51/521b51e79eec41d66adf5e807d60dc71.jpg" },
-  { id: 3, title: "Green Banarasi Saree", price: 230, image: "https://i.pinimg.com/736x/c4/98/9a/c4989ad4930f61355c5c47c88c995759.jpg" },
-  { id: 4, title: "Golden Embroidered Saree", price: 270, image: "https://i.pinimg.com/736x/21/8f/49/218f49c6dc98e9d6bc6903d2b21c5d93.jpg" },
-  { id: 5, title: "Black Sequin Saree", price: 200, image: "https://i.pinimg.com/736x/1b/9c/6f/1b9c6f5c469d0f88b34e9a24f924541a.jpg" },
-  { id: 6, title: "Pink Georgette Saree", price: 210, image: "https://i.pinimg.com/736x/0e/4e/0e/0e4e0e88f3b769f367cf7c1c4b65aa6b.jpg" },
-  { id: 7, title: "Pastel Peach Saree", price: 240, image: "https://i.pinimg.com/736x/38/80/02/388002632f5a9c248db8024f48e06527.jpg" },
-  { id: 8, title: "White Designer Saree", price: 260, image: "https://i.pinimg.com/736x/9c/61/29/9c612950ce21ebf1b55b2b3c2ffb5972.jpg" },
-  { id: 9, title: "Maroon Velvet Saree", price: 280, image: "https://i.pinimg.com/736x/56/35/2e/56352e09c08b7d1164f19cd9b3c9c9a9.jpg" },
+  { id: 1, title: "Royal Blue Silk Saree", price: 220, image: "https://5.imimg.com/data5/SELLER/Default/2023/9/342837592/YT/WF/HO/196425226/purple-embellished-geometric-print-self-design-chiffon-saree-500x500.jpg" },
+  { id: 2, title: "Red Bridal Saree", price: 250, image: "https://www.parivarceremony.com/media/catalog/product/cache/62408a38a401bb86dbe3ed2f017b539f/p/2/p2111sr01.jpg" },
+  { id: 3, title: "Green Banarasi Saree", price: 230, image: "https://www.houbara.com.bd/storage/products/3233s893-1.jpg" },
+  { id: 4, title: "Golden Embroidered Saree", price: 270, image: "https://d2ma7w4w9grdob.cloudfront.net/media/41688Golden-Lycra-Embroidery-Saree-with-Blouse-Piece-SR-92006(1).jpg" },
+  { id: 5, title: "Black Sequin Saree", price: 200, image: "https://ethnicgruh.com/wp-content/uploads/2024/09/IMG_3199.jpg" },
+  { id: 6, title: "Pink Georgette Saree", price: 210, image: "https://assets2.andaazfashion.com/media/catalog/product/cache/1/image/800x1200/a12781a7f2ccb3d663f7fd01e1bd2e4e/z/a/zari-embroidered-georgette-punch-pink-saree-sarv143015-1.jpg" },
+  { id: 7, title: "Pastel Peach Saree", price: 240, image: "https://assets.panashindia.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/6/6/6679sr02-klc9211.jpg" },
+  { id: 8, title: "White Designer Saree", price: 260, image: "https://static.wixstatic.com/media/897441_b64c02e703af4c759591ef5c586d7c21~mv2.jpg/v1/fill/w_480,h_672,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/897441_b64c02e703af4c759591ef5c586d7c21~mv2.jpg" },
+  { id: 9, title: "Maroon Velvet Saree", price: 280, image: "https://img.faballey.com/images/Product/ISS00011Z/3.jpg" },
 ];
 
 const SareeDress = () => {

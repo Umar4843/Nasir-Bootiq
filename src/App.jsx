@@ -9,8 +9,8 @@ import Mehndi from './Pages/Mehndi';
 import ProductsDescriptions from './Pages/ProductsDescriptions';
 import SignIn from './Pages/SignIn';
 import Bridal from './Pages/Bridal';
-import Fabrics from './Pages/SareeDress';
 import MaxiFrock from './Pages/MaxiFrock';
+import SareeDress from './Pages/SareeDress';
 
 
 const App = () => {
@@ -21,7 +21,7 @@ const App = () => {
       <Route path="/mehndi" element={<Mehndi/>}></Route>
       <Route path="/bridal" element={<Bridal/>}></Route>
       <Route path="/maxi&frock" element={<MaxiFrock/>}></Route>
-      <Route path="/fabrics" element={<Fabrics/>}></Route>
+      <Route path="/sareedress" element={<SareeDress/>}></Route>
       <Route path='/product/:id' element={<ProductsDescriptions/>}></Route>
       <Route path='/signin' element={<SignIn/>}></Route>
       </Routes>

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import "./MaxiFrock.css"; // Unique CSS file
-import Header from './Components/Header';
-import Footer from './Components/Footer';
+import Header from '../Components/Header';
+import Footer from '../Components/Footer';
 
 const maxiFrockItems = [
   { id: 1, title: "Elegant Black Maxi", price: 120, image: "https://webmerx.sgp1.cdn.digitaloceanspaces.com/ethnicroop/product_images/1599543627.Black_Color_Embroidery_Work_Part_Wear_Long_Gown_(2).jpeg" },

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./SareeDress.css"; // Unique CSS file
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 
 const sareeItems = [
   { id: 1, title: "Royal Blue Silk Saree", price: 220, image: "https://i.pinimg.com/736x/0a/3f/88/0a3f88e8be4bda5b8b2119fa648b5d4b.jpg" },

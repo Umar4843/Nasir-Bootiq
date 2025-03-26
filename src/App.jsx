@@ -8,9 +8,9 @@ import Home from './Pages/Home';
 import Mehndi from './Pages/Mehndi';
 import ProductsDescriptions from './Pages/ProductsDescriptions';
 import SignIn from './Pages/SignIn';
-import Bridal from './Bridal';
-import Fabrics from './SareeDress';
-import MaxiFrock from './MaxiFrock';
+import Bridal from './Pages/Bridal';
+import Fabrics from './Pages/SareeDress';
+import MaxiFrock from './Pages/MaxiFrock';
 
 
 const App = () => {

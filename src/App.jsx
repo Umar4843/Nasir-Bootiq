@@ -11,6 +11,9 @@ import SignIn from './Pages/SignIn';
 import Bridal from './Pages/Bridal';
 import MaxiFrock from './Pages/MaxiFrock';
 import SareeDress from './Pages/SareeDress';
+import SignUp from './Pages/SignUp';
+import { ToastContainer, toast } from 'react-toastify';
+
 
 
 const App = () => {
@@ -24,7 +27,9 @@ const App = () => {
       <Route path="/sareedress" element={<SareeDress/>}></Route>
       <Route path='/product/:id' element={<ProductsDescriptions/>}></Route>
       <Route path='/signin' element={<SignIn/>}></Route>
+      <Route path='/signup' element={<SignUp/>}></Route>
       </Routes>
+      <ToastContainer />
     </div>
   )
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from '../Components/Header';
 import Swiper from '../Components/Swiper';
 import './Loader.css';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -15,6 +16,12 @@ const Home = () => {
 
   return (
     <div>
+        <Helmet>
+                <meta charSet="utf-8" />
+                <title>Nasir Botiques | Explore Your Favourite</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
+      
       {loading ? (
         <div className="loader-container">
           <img 

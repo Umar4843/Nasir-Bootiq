@@ -1,45 +1,29 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import { FaSearch, FaShoppingCart, FaUser } from 'react-icons/fa';
+import { FaSearch, FaShoppingCart, FaUser, FaTimes } from 'react-icons/fa';
 import './Header.css';
-import { useNavigate } from 'react-router-dom';
-import { NavLink } from "react-router-dom";
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Modal from 'react-bootstrap/Modal';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 
 const Header = () => {
     const navigate = useNavigate();
     const [show, setShow] = useState(false);
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [menuOpen, setMenuOpen] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("Email:", email, "Password:", password);
-        setShow(false);
-    };
-
-    const handleToggle = () => {
-        setMenuOpen(!menuOpen);
-    };
-
     const menuItems = [
-        { title: 'MEHNDI DRESS', path: '/mehndi' },
-        { title: 'BRIDAL DRESS', path: '/bridal' },
+        { title: 'Mehndi Dress', path: '/mehndi' },
+        { title: 'Bridal Dress', path: '/bridal' },
         { title: 'Maxi & Frock', path: '/maxi&frock' },
         { title: 'Saree Dress', path: '/sareedress' },
     ];
 
     return (
-        <div>
+        <>
             <div className="topbox text-center py-2 bg-dark text-white">
                 <h3 className="mb-0">
                     Get your festive Eid look sorted with our latest Fabrics Collection
@@ -47,84 +31,104 @@ const Header = () => {
                 </h3>
             </div>
 
-            <Navbar expand="lg" className="navbar bg-body-tertiary">
+            <Navbar expand="lg" className="navbar bg-white shadow-sm px-3">
                 <Navbar.Brand href="/">
                     <img
                         src="https://pk.khaadi.com/on/demandware.static/-/Library-Sites-KhaadiSharedLibrary/default/dwb33579b0/images/logo/logo.svg"
                         alt="logo"
-                        className='Nav-logo' 
+                        className='Nav-logo'
                     />
                 </Navbar.Brand>
-                <Navbar.Toggle 
-                    aria-controls="basic-navbar-nav" 
-                    onClick={handleToggle} 
-                    className="navbar-toggler"
-                />
-                <Navbar.Collapse id="basic-navbar-nav" className={menuOpen ? "show" : ""}>
-                    <Nav className="mx-auto navbar-nav">
+
+                {/* MOBILE: Hamburger Menu Button */}
+                <div className="d-lg-none">
+                    <Navbar.Toggle
+                        aria-controls="offcanvasNavbar"
+                        onClick={handleShow}
+                        className="border-0"
+                    >
+                        <span className="navbar-toggler-icon"></span>
+                    </Navbar.Toggle>
+                </div>
+
+                {/* DESKTOP: Standard Nav */}
+                <div className="d-none d-lg-flex w-100 justify-content-between">
+                    <Nav className="mx-auto">
                         {menuItems.map((item, index) => (
-                            <Nav.Link 
-                                key={index} 
-                                as={NavLink} 
-                                to={item.path} 
-                                className="menu-item"
+                            <Nav.Link
+                                key={index}
+                                as={NavLink}
+                                to={item.path}
+                                className="menu-item px-3"
                             >
                                 {item.title}
                             </Nav.Link>
                         ))}
-
-                        <div className="d-flex gap-3 ms-5">
-                            <Nav.Link className="icon-link">
-                                <FaSearch className="icon" />
-                            </Nav.Link>
-                            <Nav.Link as={NavLink} to="#" className="icon-link" onClick={handleShow}>
-                                <FaUser className="icon" />
-                            </Nav.Link>
-                            <Nav.Link className="icon-link">
-                                <FaShoppingCart className="icon" />
-                            </Nav.Link>
-                        </div>
                     </Nav>
-                </Navbar.Collapse>
-            </Navbar>
 
-            {/* Sign-In Modal */}
-            <Modal show={show} onHide={handleClose} centered>
-                <Modal.Header closeButton>
-                    <Modal.Title>Sign In</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <Form onSubmit={handleSubmit}>
-                        <Form.Group className="mb-3">
-                            <Form.Label>Email</Form.Label>
-                            <Form.Control
-                                type="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                required
-                                placeholder="Enter your email"
+                    <div className="d-flex gap-3 align-items-center">
+                        <Nav.Link className="icon-link">
+                            <FaSearch />
+                        </Nav.Link>
+                        <Link className="icon-link" to="/signup">
+                            <FaUser />
+                        </Link>
+                        <Nav.Link className="icon-link">
+                            <FaShoppingCart />
+                        </Nav.Link>
+                    </div>
+                </div>
+
+                {/* MOBILE: Offcanvas Drawer */}
+                <Offcanvas
+                    show={show}
+                    onHide={handleClose}
+                    placement="start"
+                    className="custom-offcanvas d-lg-none"
+                >
+                    <Offcanvas.Header className="border-bottom d-flex align-items-center">
+                        <Offcanvas.Title className="fs-4">
+                            <img
+                                src="https://pk.khaadi.com/on/demandware.static/-/Library-Sites-KhaadiSharedLibrary/default/dwb33579b0/images/logo/logo.svg"
+                                alt="Logo"
+                                style={{ height: "50px", marginTop: "20px" }}  // Adjust marginTop to move the logo down
                             />
-                        </Form.Group>
-                        <Form.Group className="mb-3">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control
-                                type="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                required
-                                placeholder="Enter your password"
-                            />
-                        </Form.Group>
-                        <div className="d-flex justify-content-between align-items-center">
-                            <a href="#">Forgot password?</a>
-                            <Button variant="primary" type="submit">
-                                Sign In
-                            </Button>
+                        </Offcanvas.Title>
+                        <FaTimes onClick={handleClose} className="close-btn ms-auto pointer-cursor" />
+
+                    </Offcanvas.Header>
+
+
+                    <Offcanvas.Body>
+                        <div className="drawer-menu">
+                            {menuItems.map((item, index) => (
+                                <Link
+                                    key={index}
+                                    to={item.path}
+                                    className="drawer-link"
+                                    onClick={handleClose}
+                                >
+                                    {item.title}
+                                </Link>
+                            ))}
+
+                            <div className="drawer-icons mt-4 pt-3 border-top">
+                                <Link className="icon-link" to="#" onClick={handleClose}>
+                                    <FaSearch />
+                                </Link>
+                                <Link className="icon-link" to="/signup" onClick={handleClose}>
+                                    <FaUser />
+                                </Link>
+                                <Link className="icon-link" to="#" onClick={handleClose}>
+                                    <FaShoppingCart />
+                                </Link>
+                            </div>
                         </div>
-                    </Form>
-                </Modal.Body>
-            </Modal>
-        </div>
+                    </Offcanvas.Body>
+
+                </Offcanvas>
+            </Navbar>
+        </>
     );
 };
 

@@ -154,3 +154,44 @@ h3 {
     box-shadow: none;
   }
 }
+.drawer-link {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.drawer-link:hover,
+.drawer-link.active {
+  color: #c2185b;
+}
+
+.drawer-icons {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1rem;
+}
+
+.icon-link {
+  font-size: 1.3rem;
+  color: #555;
+  text-decoration: none;
+}
+
+.icon-link:hover {
+  color: #c2185b;
+}
+
+.pointer-cursor {
+  cursor: pointer;  /* Ensures the cursor changes to a pointer when hovered */
+}
+
+@media (min-width: 992px) {
+  .custom-offcanvas {
+    display: none !important;
+  }
+}

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./SareeDress.css"; // Unique CSS file
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
+import { Helmet } from "react-helmet";
 
 const sareeItems = [
   { id: 1, title: "Royal Blue Silk Saree", price: 220, image: "https://5.imimg.com/data5/SELLER/Default/2023/9/342837592/YT/WF/HO/196425226/purple-embellished-geometric-print-self-design-chiffon-saree-500x500.jpg" },
@@ -22,6 +23,11 @@ const SareeDress = () => {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Sareeh Dresses | Explore Your Favourite</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <Header />
       <div className="saree-container">
         {/* Top Bar */}

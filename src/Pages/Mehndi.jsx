@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./Products.css";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
+import { Helmet } from "react-helmet";
 const mehndiDresses = [
     { id: 1, title: "Elegant Green Mehndi Dress", price: 120, image: "https://i.pinimg.com/736x/c4/48/53/c448536e2d82f28a18bd09fd2a40b5d3.jpg", description: "Beautiful traditional mehndi dress with embroidery." },
     { id: 2, title: "Golden Glow Mehndi Outfit", price: 150, image: "https://blog.shaadivyah.com/wp-content/uploads/2024/12/Radiant-Mehndi-Makeup-Look-with-Golden-Glow.jpg", description: "A stunning golden mehndi outfit for festive occasions." },
@@ -29,11 +30,16 @@ const mehndiDresses = [
 
 
 const Products = () => {
-        useEffect(() => {
-            window.scrollTo(0, 0);
-        }, []);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Mehndi Dresses | Explore Your Mehndi Designs</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
             <Header />
             <div className="main-content">
                 <div className="products-container">

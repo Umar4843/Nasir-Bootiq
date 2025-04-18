@@ -1,117 +1,92 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import axios from "axios";
 import Footer from "../Components/Footer";
+import './SignIn.css';
+import { Link } from "react-router-dom";
+import { GoogleLogin } from '@react-oauth/google';
+import { jwtDecode } from 'jwt-decode';
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = async(e) => {
+  // ✅ Google Sign-In success handler
+  const handleGoogleSuccess = async (credentialResponse) => {
+    try {
+      const decoded = jwtDecode(credentialResponse.credential);
+      console.log("Google User:", decoded);
+
+      // ✅ Send to backend
+      const res = await axios.post("http://localhost:8083/auth/google", decoded);
+      console.log("Backend Response:", res.data);
+    } catch (err) {
+      console.error("Google Login Error:", err);
+    }
+  };
+
+  // ✅ Manual login (email/password)
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const response=await axios.post("http://localhost:8082/api/user")
     console.log("Email:", email, "Password:", password);
+    const response = await axios.post("http://localhost:8083/admin/user", {
+      email,
+      password
+    });
+    console.log(response.data);
   };
 
   return (
     <>
-    <Container>
-      <FormWrapper>
-        <h2>Sign In</h2>
-        <Form onSubmit={handleSubmit}>
-          <InputGroup>
-            <label>Email</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              placeholder="Enter your email"
-            />
-          </InputGroup>
-          <InputGroup>
-            <label>Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              placeholder="Enter your password"
-            />
-          </InputGroup>
-          <Button type="submit">Sign In</Button>
-          <ForgotPassword>
-            <a href="#">Forgot password?</a>
-          </ForgotPassword>
-        </Form>
-      </FormWrapper>
-    </Container>
-    <Footer/>
+      <div className="container">
+        <div className="form-wrapper">
+          <h2>Sign In</h2>
+
+          {/* ✅ Google Sign-In Button */}
+          <GoogleLogin
+            onSuccess={handleGoogleSuccess}
+            onError={() => {
+              console.log('Google Login Failed');
+            }}
+          />
+
+          <div className="separator">or</div>
+
+          {/* ✅ Email/Password Form */}
+          <form className="form" onSubmit={handleSubmit}>
+            <div className="input-group">
+              <label>Email</label>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                placeholder="Enter your email"
+              />
+            </div>
+            <div className="input-group">
+              <label>Password</label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                placeholder="Enter your password"
+              />
+            </div>
+            <button className="button" type="submit">Sign In</button>
+            <p className="forgot-password">
+              <a href="#">Forgot password?</a>
+            </p>
+          </form>
+
+          <p className="signup-link">
+            Don't have an account? <Link to={"/signup"}>SIGN UP</Link>
+          </p>
+        </div>
+      </div>
+      <Footer />
     </>
   );
 };
-
-// Styled Components
-const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f4f4f4;
-`;
-
-const FormWrapper = styled.div`
-  background: #fff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  width: 350px;
-  text-align: center;
-`;
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-`;
-
-const InputGroup = styled.div`
-  margin-bottom: 15px;
-  text-align: left;
-  
-  label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-
-  input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-`;
-
-const Button = styled.button`
-  background: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  
-  &:hover {
-    background: #0056b3;
-  }
-`;
-
-const ForgotPassword = styled.p`
-  margin-top: 10px;
-  
-  a {
-    text-decoration: none;
-    color: #007bff;
-  }
-`;
 
 export default SignIn;

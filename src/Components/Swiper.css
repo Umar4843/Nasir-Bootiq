@@ -1,131 +1,66 @@
-/* Ensure the swiper takes full screen */
-.swiper {
-    width: 100%;
-    height: 100vh;
+/* Swiper.css */
+.margin-top-100px {
+    margin-top: 100px;
+}
+
+.product-grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* 4 items per row */
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-image-wrapper {
     position: relative;
 }
 
-/* Swiper Slide */
-.swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.8s ease-in-out !important; /* Smooth slide transition */
-}
-
-/* Responsive image styles */
-.swiper-slide img {
-    display: block;
+.product-image {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-    opacity: 0.8; /* Start slightly faded */
+    height: auto;
 }
 
-/* Active slide effect - fades in and slightly zooms */
-.swiper-slide-active img {
-    opacity: 1;
-    transform: scale(1.02); /* Slight zoom for a smooth effect */
-}
-.footer{
-display: block;
-}
-/* Fix the header and topbox at the top */
-.topbox {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 25px;
-    background-color: #c3d5d9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.navbar {
-    position: fixed;
-    top: 25px; /* Push below topbox */
-    width: 100%;
-    height: 90px;
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
-    background-color: white; /* Ensure background so it doesn't overlap */
-    z-index: 999;
-}
-
-/* Move the swiper down to prevent header overlap */
-.swiper {
-    margin-top: 115px; /* Offset for fixed header and topbox */
-}
-
-/* Move pagination dots to the right */
-.swiper-pagination {
+.badge {
     position: absolute;
-    right: 30px !important; /* Move dots to the right */
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    top: 10px;
+    left: 10px;
+    background-color: #ff5a5f;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 3px;
 }
 
-/* Default small pagination dots */
-.swiper-pagination-bullet {
-    background: white !important;
-    width: 6px;
-    height: 6px;
-    opacity: 0.5;
-    margin: 8px 0 !important; /* Space between dots */
-    transition: all 0.3s ease-in-out; /* Smooth transition */
+.product-info {
+    padding: 10px;
 }
 
-/* Active pagination dot is bigger */
-.swiper-pagination-bullet-active {
-    width: 14px !important;
-    height: 14px !important;
-    opacity: 1;
-    transition: all 0.3s ease-in-out; /* Smooth transition */
+h5 {
+    font-size: 16px;
+    margin: 10px 0;
 }
 
-/* Hide scrollbar */
-::-webkit-scrollbar {
-    display: none;
+.price {
+    font-size: 14px;
+    color: #777;
 }
 
-/* Responsive adjustments for smaller screens */
-@media (max-width: 1024px) {
-    .swiper {
-        height: 80vh; /* Reduce height on tablets */
-    }
-    .swiper-pagination {
-        right: 20px !important; /* Adjust position */
-    }
-}
-
+/* Mobile view for responsiveness */
 @media (max-width: 768px) {
-    .swiper {
-        height: 70vh; /* Smaller height on mobile */
-        margin-top: 115px;
-    }
-    .swiper-slide img {
-        object-fit: contain; /* Show full image on smaller screens */
-    }
-    .swiper-pagination {
-        right: 10px !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .swiper {
-        height: 60vh; /* Further reduce height on very small screens */
-        margin-top: 115px;
-    }
-    .swiper-pagination {
-        right: 10px !important; /* Move pagination closer on mobile */
+    .product-grid-container {
+        grid-template-columns: repeat(2, 1fr);  /* 2 items per row on mobile */
     }
 }

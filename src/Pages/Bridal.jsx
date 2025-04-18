@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
-import Header from "../Components/Header"; 
-import Footer from "../Components/Footer"; 
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 import "./Bridal.css";
+import { Helmet } from "react-helmet";
 
 const bridalDresses = [
   { id: 1, title: "Elegant Red Bridal Lehenga", price: 250, image: "https://i.pinimg.com/736x/5f/69/4e/5f694eda7af03de99caa0b4a7803af3b.jpg" },
@@ -22,11 +23,16 @@ const bridalDresses = [
 ];
 
 const Bridal = () => {
-  useEffect(()=>{
-    window.scrollTo(0,0)
-  },[])
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Bridal Dresses | Explore Your Favourite</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <Header />
       <div className="bridal-container">
         <h1 className="bridal-title">Bridal Collection</h1>

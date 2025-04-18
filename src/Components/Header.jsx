@@ -88,12 +88,15 @@ const Header = () => {
                 >
                     <Offcanvas.Header className="border-bottom d-flex align-items-center">
                         <Offcanvas.Title className="fs-4">
-                            <img
-                                src="https://pk.khaadi.com/on/demandware.static/-/Library-Sites-KhaadiSharedLibrary/default/dwb33579b0/images/logo/logo.svg"
-                                alt="Logo"
-                                style={{ height: "50px", marginTop: "20px" }}  // Adjust marginTop to move the logo down
-                            />
+                            <a href="/" className="logo-link">
+                                <img
+                                    src="https://pk.khaadi.com/on/demandware.static/-/Library-Sites-KhaadiSharedLibrary/default/dwb33579b0/images/logo/logo.svg"
+                                    alt="Logo"
+                                    style={{ height: "50px", marginTop: "20px" }}  // Adjust marginTop to move the logo down
+                                />
+                            </a>
                         </Offcanvas.Title>
+
                         <FaTimes onClick={handleClose} className="close-btn ms-auto pointer-cursor" />
 
                     </Offcanvas.Header>

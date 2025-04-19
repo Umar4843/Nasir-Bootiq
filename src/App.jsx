@@ -13,6 +13,7 @@ import MaxiFrock from './Pages/MaxiFrock';
 import SareeDress from './Pages/SareeDress';
 import SignUp from './Pages/SignUp';
 import { ToastContainer, toast } from 'react-toastify';
+import Layout from './Pages/Layout';
 
 
 
@@ -20,6 +21,7 @@ const App = () => {
   return (
     <div>
       <Routes>
+      {/* <Route path='/' element={<Layout/>} /> */}
       <Route path='/' element={<Home/>} />
       <Route path="/mehndi" element={<Mehndi/>}></Route>
       <Route path="/bridal" element={<Bridal/>}></Route>

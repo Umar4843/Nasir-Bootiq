@@ -8,14 +8,13 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-section">
           <h3>About Us</h3>
-          <p>We provide the best Mehndi dresses for all occasions. Quality and style at the best prices.</p>
+          <p>We provide the best dresses for all occasions. Quality and style at the best prices.</p>
         </div>
 
         <div className="footer-section">
           <h3>Quick Links</h3>
           <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/mehndi">Mehndi</a></li>
             <li><a href="/contact">Contact</a></li>
             <li><a href="/about">About</a></li>
           </ul>

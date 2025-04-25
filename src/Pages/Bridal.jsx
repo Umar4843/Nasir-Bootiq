@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import "./Bridal.css";
@@ -23,9 +23,18 @@ const bridalDresses = [
 ];
 
 const Bridal = () => {
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -33,19 +42,29 @@ const Bridal = () => {
         <title>Bridal Dresses | Explore Your Favourite</title>
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
+
       <Header />
-      <div className="bridal-container">
-        <h1 className="bridal-title">Bridal Collection</h1>
-        <div className="bridal-grid">
-          {bridalDresses.map((dress) => (
-            <div key={dress.id} className="bridal-card">
-              <img src={dress.image} alt={dress.title} className="bridal-image" />
-              <h3 className="bridal-name">{dress.title}</h3>
-              <p className="bridal-price">${dress.price}</p>
-            </div>
-          ))}
+
+      {loading ? (
+        <div className="loader-container">
+          <div className="spinner"></div>
+          <p className="loading-text">Loading Bridal Collection...</p>
         </div>
-      </div>
+      ) : (
+        <div className="bridal-container">
+          <h1 className="bridal-title">Bridal Collection</h1>
+          <div className="bridal-grid">
+            {bridalDresses.map((dress) => (
+              <div key={dress.id} className="bridal-card">
+                <img src={dress.image} alt={dress.title} className="bridal-image" />
+                <h3 className="bridal-name">{dress.title}</h3>
+                <p className="bridal-price">${dress.price}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+  {/* //dsjknf// */}
       <Footer />
     </>
   );

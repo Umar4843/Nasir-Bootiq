@@ -3,7 +3,7 @@ import Header from './Components/Header'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Swiper from './Components/Swiper';
 import { BrowserRouter, Routes ,Route } from 'react-router-dom';
-import Starter from './Pages/Starter';
+// import Starter from './Pages/Starter';
 import Home from './Pages/Home';
 import Mehndi from './Pages/Mehndi';
 import ProductsDescriptions from './Pages/ProductsDescriptions';
@@ -13,7 +13,7 @@ import MaxiFrock from './Pages/MaxiFrock';
 import SareeDress from './Pages/SareeDress';
 import SignUp from './Pages/SignUp';
 import { ToastContainer, toast } from 'react-toastify';
-import Layout from './Pages/Layout';
+// import Layout from './Pages/Layout';
 
 
 

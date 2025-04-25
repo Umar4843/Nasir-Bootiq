@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 const LazyOutlet = React.lazy(() =>
   import("react-router-dom").then((module) => ({ default: module.Outlet }))
 );

@@ -28,7 +28,7 @@ const products = [
         badge: "New"
     },
     {
-        name: "Wedding Kurta",
+        name: "Wedding Dress",
         price: "$89.50",
         image: "https://cdn.feebee.pk/wp-content/uploads/2022/10/badan-300x480.jpg",
         badge: "New"
